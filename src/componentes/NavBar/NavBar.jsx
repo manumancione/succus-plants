@@ -12,7 +12,7 @@ const NavBar = () => {
           </div>
 
           <div className='nav-icon nav-icon--hamburguesa'>
-              <button><i className='bi bi-list'></i></button>
+              <button onclick={abrirMenuHamburguesa}><i className='bi bi-list'></i></button>
           </div>
 
           <div className='nav-container__item'>

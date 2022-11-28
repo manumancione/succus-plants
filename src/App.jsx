@@ -6,14 +6,17 @@ import SuperNav from './componentes/SuperNav/SuperNav'
 import NavBar from './componentes/NavBar/NavBar'
 import Footer from './componentes/Footer/Footer'
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
+import MenuHamburguesa from './componentes/MenuHamburguesa/MenuHamburguesa'
 
 
 
 
 
-function App() { 
+function App() {
   
-let saludo="Hola, holaaaa!"
+  let saludo = "Hola, holaaaa!"
+  let nombreStore = "Succus&Plants"
+  
 
   return (
     <div>
@@ -21,6 +24,7 @@ let saludo="Hola, holaaaa!"
       <NavBar />
       <ItemListContainer 
         saludo={saludo}
+        nombreStore={nombreStore}
       />
       <Footer />
     </div>
