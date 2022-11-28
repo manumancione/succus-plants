@@ -1,6 +1,6 @@
 
 import './NavBar.css'
-import LogoPpal from '../../assets/logoPpal2.png'
+import LogoPpal from '../../assets/logoPpal3.png'
 import LogoIcono from '../../assets/logoIcono.png'
 
 

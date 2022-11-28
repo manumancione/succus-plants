@@ -5,7 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import SuperNav from './componentes/SuperNav/SuperNav'
 import NavBar from './componentes/NavBar/NavBar'
 import Footer from './componentes/Footer/Footer'
-import Saludar from './componentes/Saludar/Saludar'
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 
 
 
@@ -19,7 +19,7 @@ let saludo="Hola, holaaaa!"
     <div>
       <SuperNav />   
       <NavBar />
-      <Saludar 
+      <ItemListContainer 
         saludo={saludo}
       />
       <Footer />
