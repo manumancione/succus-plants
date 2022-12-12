@@ -1,6 +1,5 @@
-
-import './Footer.css'
 import LogoIcono from '../../assets/logoIcono.png'
+import './Footer.css'
 
 const Footer = () => {
     return (
