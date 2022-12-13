@@ -7,6 +7,12 @@
     margin: 2rem;
 }
 
+@media screen and (max-width:800px) {
+.counter-container {
+margin: 2rem auto;
+}
+}
+
 .counter-button {
     border: none;
     margin: 0 auto;
@@ -17,7 +23,7 @@
 }
 
 .counter-button i {
-    color: rgba(0, 0, 0, 0.4);    
+    color: rgba(0, 0, 0, 0.4);
     font-size: 1.7rem;
     font-weight: 600;
 }
@@ -31,4 +37,17 @@
     font-family: 'Source Serif Pro',
         serif;
     vertical-align: middle;
+}
+
+.counter-button-cantidades {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    margin: 1rem;
+    font-family: 'Source Serif Pro',
+        serif;
+    letter-spacing: .1rem;
+    cursor: pointer;
 }

@@ -1,0 +1,44 @@
+.hero{
+    background-image: linear-gradient(to top, hsla(0, 0%, 0%, 0.8), hsla(0, 1%, 39%, 0.094)),
+     url(../../../public/hero001.webp);
+    width: 100%;
+    height: 75vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    font-family: 'Montserrat',
+    sans-serif;
+    padding: .5rem 3rem;   
+    
+}
+
+.hero-title {
+    font-size: 2.8rem;
+     margin:14rem 5rem 2rem ;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #fff;
+   text-transform: uppercase;
+   letter-spacing: .3rem;
+    font-family: 'Montserrat',
+    sans-serif;
+   margin: 0 2rem 0 5rem;
+  
+     display: inline;
+}
+
+.hero-button {
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: .17rem;
+    cursor: pointer;
+    
+    
+}
+

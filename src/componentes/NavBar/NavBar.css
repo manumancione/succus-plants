@@ -1,12 +1,13 @@
-.isActive{
-    color: red;
-}
+
 
 .nav-container {
     padding: 1rem .5rem;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #000;
+    /* position: fixed;
+    width: 100%;
+    background-color: #fff; */
 }
 
 .nav-container__item {

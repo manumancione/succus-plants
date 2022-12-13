@@ -1,17 +1,11 @@
-// import React from 'react'
-// import { funcionFetch } from "../../helpers/funcionFetch"
+import Item from '../Item/Item'
 
-// const ItemList = () => {
-//     return (
-   
-// //                 <div key={product.id} className='product-card'>
-// //                     <h4>{product.name}</h4>
-// //                     <img className='product-card__img' src={product.image} alt='' />
-// //                     <p>{product.price}</p>
-// //                     <button>Comprar</button>
-// //                 </div>
+const ItemList = ({productos}) => {
+    return (
+        
+        productos.map(product => <Item product={product} key={product.id}/>)   
 
-//     )
-// }
+    )
+}
 
-// export default ItemList
+export default ItemList

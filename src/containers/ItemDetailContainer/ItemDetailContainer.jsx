@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../../componentes/ItemDetail/ItemDetail'
+import { funcionFetch } from '../../helpers/funcionFetch'
 import  './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
-
+    const [product, setProduct] = useState({})
     const {productId} = useParams()
-    console.log(productId)
+    
     //use effect + gfetch(productoId) ->objeto
+  useEffect(() => {
+    funcionFetch(productId)
+      .then(resp => setProduct(resp))
+      .catch(error=>console.log(error))
+  }, [])
+
   return (
     <div>
-        <h2>item detail container</h2>
           <ItemDetail
-          // prodct ={product}
+        product={product}
           />
     </div>
   )

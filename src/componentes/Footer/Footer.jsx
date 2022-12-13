@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import LogoIcono from '../../assets/logoIcono.png'
 import './Footer.css'
 
@@ -6,7 +7,7 @@ const Footer = () => {
       <div>
             <div className='footer-container'>
              <div className='footer-container__item'>
-                    <a href='../index.html' ><img className='footer-logo' src={LogoIcono} alt='logo'></img></a>
+                    <Link to={'/'}><img className='footer-logo' src={LogoIcono} alt='logo'></img></Link>
              </div>
 
              <div className='footer-container__item'>

@@ -4,6 +4,7 @@ import LogoIcono from '../../assets/logoIcono.png'
 import MenuHamburguesa from '../MenuHamburguesa/MenuHamburguesa'
 import './NavBar.css'
 import { Link, NavLink } from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
 
 
 const NavBar = ({ children }) => {
@@ -24,7 +25,7 @@ return (
 
         <div className='nav-container__item'>
             <ul className='nav-list'>
-                <li><Link to='/categoria/suculentas'>SUCULENTAS</Link></li>
+                <li><Link to='categoria/suculentas'>SUCULENTAS</Link></li>
                     <li><Link to='/categoria/plantas'>PLANTAS</Link></li>
             </ul>
                 <Link to='/'><img className="logo-img" src={LogoPpal} alt='Logo de Succus and Plants'></img></Link>
@@ -41,8 +42,9 @@ return (
                 <button><i className='bi bi-search nav-icon-search'></i></button>
             </div>
 
-            <div className='nav-icon'>
-                <button><i className='bi bi-bag'><span className="nav-icon__span">0</span></i></button>
+                <div className='nav-icon'>
+                    <CartWidget/>
+                {/* <button><i className='bi bi-bag'><span className="nav-icon__span">0</span></i></button> */}
             </div>
         </div>
 

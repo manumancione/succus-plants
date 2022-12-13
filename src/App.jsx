@@ -12,7 +12,9 @@ import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailCont
 
 import './App.css'
 import { Router } from 'react-router-dom'
-import ItemCount from './componentes/ItemCount/ItemCount'
+//import ItemCount from './componentes/ItemCount/ItemCount'
+//import ItemList from './componentes/ItemList/ItemList'
+// import Hero from './componentes/Hero/Hero'
 
 
 
@@ -33,7 +35,7 @@ function App() {
       <NavBar>
         <MenuHamburguesa />
       </NavBar>
-      
+      {/* <Hero /> */}
 
       <Routes> 
         <Route path='/' element={<ItemListContainer />} />
@@ -42,8 +44,7 @@ function App() {
         <Route path='*' element={<Navigate to='/' />} />
         {/* <Route path='/notpage*' element={<Componente404/>} /> =>para hacer una vista de 404*/}
       </Routes>
-
-     
+    
 
       <Footer />
 

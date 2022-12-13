@@ -1,18 +1,24 @@
 import React, { useState } from 'react'
 import './ItemCount.css'
 
-const ItemCount = () => {
+const ItemCount = ({stock=8, initial=1,onAdd}) => {
 
-    const [contador, setearContador] =useState(0)
+    const [count, setCount] =useState(1)
 
     const sumaCount = () => {
-        setearContador(contador+1)
+        if (count < stock) {
+            setCount(count + 1)
+        }
     }
 
     const restaCount = () => {
-        if (contador > 0) {
-            setearContador(contador - 1)
-        } else (contador == 0 )
+        if(count > initial) {
+            setCount(count - 1)
+        } 
+    }
+
+    const handleOnAdd = () => {
+        onAdd(count)
     }
   return (
       <div>
@@ -20,13 +26,13 @@ const ItemCount = () => {
               
               <button className='counter-button' onClick={restaCount}><i className="bi bi-dash"></i></button>              
 
-              <label className='counter-display' htmlFor=''>{contador}</label>
+              <label className='counter-display' htmlFor=''>{count}</label>
 
               <button className='counter-button' onClick={sumaCount}><i className="bi bi-plus"></i></button>
           
                         
         </div>
-        <button className='buttonCounter' >Agregar al carrito</button>
+          <button className='counter-button-cantidades' onClick={handleOnAdd} >Agregar al carrito</button>
           
     </div>
   )
