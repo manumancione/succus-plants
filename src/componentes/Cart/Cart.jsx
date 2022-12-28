@@ -2,9 +2,8 @@ import './Cart.css'
 
 const Cart = () => {
   return (
-    <div>
-      
-    </div>
+   
+    <h1>cart</h1>
   )
 }
 

@@ -1,37 +1,34 @@
-import LogoIcono from '../../assets/logoIcono.png'
-import './MenuHamburguesa.css'
+// import { useState } from 'react'
+// import LogoIcono from '../../assets/logoIcono.png'
+// import './MenuHamburguesa.css'
 
-const MenuHamburguesa = () => {
-
-
-// cerrar y abrir menu hamburguesa
-const menuHamburguesa = document.getElementsByClassName('nav-hamburguesa');
-
-const cerrarMenuHamburguesa = () => {
-// menuHamburguesa.style.display = 'none';
-  menuHamburguesa.classList.add('inactivo')
-console.log('funciona')
-}
+// const MenuHamburguesa = (handleClick) => {
 
 
+//     const [clickEnMenuHamburguesa, setClickEnMenuHamburguesa] = useState(true)
+//     const handleClick = () => {
+//         setClickEnMenuHamburguesa(!clickEnMenuHamburguesa)
+//     }
 
-return (
-<div>
-  <div className='nav-hamburguesa' >
-    <div className='nav-hamburguesa-container'>
-      <a href='../index.html'><img className='nav-hamburguesa-logo' src={LogoIcono} alt='logo'></img></a>
-        <button id='closeButton' onClick={cerrarMenuHamburguesa} className='nav-hamburguesa-close'><i
-          className="bi bi-x"></i></button>
-    </div>
-    <ul>
-      <li><a href=''>SUCULENTAS</a></li>
-      <li><a href=''>PLANTAS</a></li>
-      <li><a href=''>MACETAS</a></li>
-      <li><a href=''>CUIDADOS</a></li>
-    </ul>
-  </div>
-</div>
-)
-}
 
-export default MenuHamburguesa
+//     return (
+//         <>
+
+//             <div className={`nav-hamburguesa ${clickEnMenuHamburguesa ? 'navHamburguesaInactivo' : ''}`}>
+
+//                 <div className='nav-hamburguesa-container'>
+//                     <a href='../index.html'><img className='nav-hamburguesa-logo' src={LogoIcono} alt='logo'></img></a>
+//                     <button onClick={handleInter} className='nav-hamburguesa-close'><i className="bi bi-x"></i></button>
+//                 </div>
+//                 <ul>
+//                     <li><a href=''>SUCULENTAS</a></li>
+//                     <li><a href=''>PLANTAS</a></li>
+//                     <li><a href=''>MACETAS</a></li>
+//                     <li><a href=''>CUIDADOS</a></li>
+//                 </ul>
+//             </div>
+//         </>
+// )
+// }
+
+// export default MenuHamburguesa

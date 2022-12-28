@@ -39,20 +39,7 @@ return (
     <h2>Cargando productos...</h2>
     :
       <ItemList productos={productos} />
-        //ITEMLIST
-        //productos.map(product =>
-    // <div key={product.id} className='product-card'>
-    //     <Link to={`/detail/${product.id}`}>
-    //       <div className='card'>
-    //         <img className='product-card__img' src={product.image} alt='' />
-    //         <h4>{product.name}</h4>
-    //         <p>desde $ {product.price}</p>
-    //         {/* <button>Agregar al carrito</button> */}
-    //       </div>
-    //   </Link>
-    // </div>
-
-
+       
     }
 
   </div>

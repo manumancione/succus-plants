@@ -1,0 +1,56 @@
+/* COMPONENTE CART */
+
+
+.cart {
+    width: 30%;
+    border: 5px red solid;
+    background-color: #fff;
+    height: 700px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.button-finalizar {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0rem;
+    width: 70%;
+    border: none;
+    border-radius: 2px;
+    margin: 1rem 0;
+    font-family: 'Montserrat',
+        sans-serif;
+    letter-spacing: .15rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 10px auto;
+}
+
+.button-finalizar:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.04);
+}
+
+.button-continuar {
+    border: none;
+    background-color: #fff;
+    font-family: 'Montserrat',
+        sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.322);
+    padding: 2rem 0 0.2rem;
+    font-size: 0.9rem;
+    letter-spacing: .08rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s ease-out;
+
+}
+
+.button-continuar:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.div-button {
+    text-align: center;
+}
