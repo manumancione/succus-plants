@@ -1,30 +1,86 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useCartContext } from '../../componentes/Context/CartContext'
+import ItemCount from '../../componentes/ItemCount/ItemCount'
+import './CartContainer.css'
 
 const CartContainer = () => {
 
 const {cartList, vaciarCarrito} = useCartContext()
 console.log("cartList :" + cartList)
 
+    const [count, setCount] = useState(1)
+
+
+    const sumaCount = ({stock=8}) => {
+        if (count < stock) {
+            setCount(count + 1)
+        }
+    }
+
+    const restaCount = () => {
+        if (count > initial) {
+            setCount(count - 1)
+        }
+    }
+
+    const handleOnAdd = () => {
+        onAdd(count)
+
+    }
+
+      //precio total
+    const { precioTotal } = useCartContext()
+      
+    
+     //eliminar por item
+    const { eliminarItem } = useCartContext()
 
 return (
     <>
         < div className='cart'>
-            <h3>Tu carrito</h3>
-
+            <div className='cart-header'>
+                <h3 className='cart-header__title'>Tu carrito<i className="bi bi-bag-heart"></i></h3>
+                <Link to={'/'}><button className="cart-header__button"><i className="bi bi-x-lg icon-cerrar"></i></button></Link>
+            </div>
             {/* MAP */}
             <div>
-                {cartList.map(product => <li key={product.id}>
-                    <img src={product.image} alt="imagen alt" style={{width:100}}/>
-                    <h4>{product.name}</h4>
-                    <h5>Cantidad: {product.cantidadItemSeleccionados}</h5>
-                    <button onClick={() => console.log("eliminando")}>X</button>
-                   
+                {cartList.map(product =>
+                    <li key={product.id} className='cart-list'>
+                        <div className='item-list'>
+                            <img className='item' src={product.image} alt="imagen alt"  />
+                            <div className='item' >
+                                <h4>{product.name}</h4>
+                                <h5>(tamaño seleccionado en cm)</h5>
+                                {/* <ItemCount /> */}
+                        
+                                <div className='counter-container'>
+                                    <button className='counter-button' onClick={restaCount}><i className="bi bi-dash"></i></button>
 
-                </li>
+                                    <label className='counter-display' htmlFor=''>{count}</label>
+
+                                    <button className='counter-button' onClick={sumaCount}><i className="bi bi-plus"></i></button>
+                                </div>
+                            </div>
+                            {/* <h5 className='item' >Cantidad: {product.cantidadItemSeleccionados}</h5> */}
+                            <div className='item item--precio'>
+                                {/* <button className='icon-eliminar' onClick={eliminarItem(product.id)}><i className="bi bi-x-lg"></i></button>  */}
+                                <h5>$ {product.price}</h5>
+                            </div>    
+                        </div>
+
+                    </li>
                     
                 )}
-                <button onClick={vaciarCarrito}>vaciar carrito</button>
+               
+               
                 {/* funcion : precio total y cantidad de item */}
+               
+               
+            </div>
+
+            <div>
+                <h5>Precio total: { precioTotal()}</h5>
             </div>
             
             <div className='div-button'>
@@ -33,8 +89,9 @@ return (
             </div>
 
             <div className='div-button'>
-                <button className='button-continuar'>Continuar comprando
-                </button>
+                <Link to='/'><button className='button-continuar'>Continuar comprando
+                </button></Link>
+                <button className='button-vaciar' onClick={vaciarCarrito}>vaciar carrito</button>
             </div>
         </div>
 

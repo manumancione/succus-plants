@@ -2,7 +2,7 @@ import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
 import Caso1 from '../Select/Select'
 import './ItemDetail.css'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { useCartContext } from '../Context/CartContext'
 
 const ItemDetail = ({ product }) => {
@@ -15,6 +15,28 @@ const ItemDetail = ({ product }) => {
   }
   
   console.log(cartList)
+
+
+
+  const [count, setCount] = useState(1)
+
+
+  const sumaCount = () => {
+    if (count < stock) {
+      setCount(count + 1)
+    }
+  }
+
+  const restaCount = () => {
+    if (count > initial) {
+      setCount(count - 1)
+    }
+  }
+
+  const handleOnAdd = () => {
+    onAdd(count)
+  }
+
   return (
     
     <div className='detail-container'>
@@ -30,23 +52,17 @@ const ItemDetail = ({ product }) => {
         <h4 className='subtitle'>Tamaño</h4>
 
         <Caso1 />
-
+     
         <p><i className="bi bi-heart"></i> Seleccionado a mano</p>
-
-      
-      
-        <Link to='/cart'><button className='agregar-al-carrito'>Agregar al carrito</button></Link>
-
-        <Link to='/'><button className='button-continuar'>Continuar comprando</button></Link>
-      
-
-        <ItemCount
-          stock={ product.stock }
-        initial={1}
-        onAdd={onAdd}
-        />
+    
+      <Link to='/cart'><button className='agregar-al-carrito' onClick={handleOnAdd} >Agregar al carrito</button></Link>
+             
+     
       
         <p className='detail-comment'>Envío gratis en compras mayores a $5000, y hasta 3 cuotas <b>sin interés</b>.</p>
+
+        <Link to='/'><button className='button-continuar'>Continuar comprando</button></Link>
+        
         <h4>Descripción</h4>
         <p>{product.description}</p>
       </div>

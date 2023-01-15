@@ -30,12 +30,12 @@ const ItemCount = ({stock=8, initial=1,onAdd}) => {
 
               <label className='counter-display' htmlFor=''>{count}</label>
 
-              <button className='counter-button' onClick={sumaCount}><i className="bi bi-plus"></i></button>
-          
-                        
-        </div>
+              <button className='counter-button' onClick={sumaCount}><i className="bi bi-plus"></i></button>        
+          </div>
+          <div>
           <button className='counter-button-cantidades' onClick={handleOnAdd} >Agregar al carrito</button>         
-        </div>
+          </div>
+          </div>
   )
 }
 

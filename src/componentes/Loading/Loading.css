@@ -3,6 +3,10 @@
     border-radius: 50%;
     width: 50px;
     height: 50px;
+    margin: 12rem 0;
+
+
+
 }
 
 .loader {
@@ -14,7 +18,8 @@
 .loader::before,
 .loader::after {
     content: '';
-    border: 3px solid #2d2d2e;
+    border: 3px solid #504f4fad;
+    box-shadow: 2px 1px 3px 3px rgba(0, 0, 0, 0.05);
     border-radius: 50%;
     width: inherit;
     height: inherit;
@@ -54,4 +59,12 @@
     50% {
         transform: rotateX(-180deg) skew(10deg, 5deg);
     }
+}
+
+.div-center{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 2.5rem auto 3rem;
+    justify-content: space-evenly;
 }

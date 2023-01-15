@@ -2,11 +2,11 @@ import './Loading.css'
 
 const Loading = () => {
   return (
-      <div>
+      <div className='div-center'>
           
-          <div class="spinner">
-              <div class="loader l1"></div>
-              <div class="loader l2"></div>
+          <div className="spinner">
+              <div className="loader l1"></div>
+              <div className="loader l2"></div>
           </div>
       
     </div>
