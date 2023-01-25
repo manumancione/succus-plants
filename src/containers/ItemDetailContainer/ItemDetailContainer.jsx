@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
   // const [producto, setProducto] = useState([])  // ------> en detailcontainer (firebase)
   const [loading, setLoading] = useState(true)
-    const {productoId} = useParams()
+    const {productId} = useParams()
     
     
   // useEffect(() => {
@@ -23,13 +23,13 @@ const ItemDetailContainer = () => {
   //trae un solo pto: ITEMDETAILCONTAINER
   useEffect(() => {
     const baseDatos = getFirestore()
-    const queryDoc = doc(baseDatos, 'productos', 'productoId')
+    const queryDoc = doc(baseDatos, 'productos', productId)
     getDoc(queryDoc)
       .then(response => setProduct({id:response.id, ...response.data()}))
       .catch(error => console.log(error))
       .finally(()=>setLoading(false))
   },[])
-  console.log(productoId)
+  console.log(productId)
 
   return (
     <div className='div'>
