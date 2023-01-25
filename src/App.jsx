@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 import reactLogo from './assets/react.svg'
@@ -11,7 +11,7 @@ import ItemListContainer from './containers/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
 
 import './App.css'
-import { Router } from 'react-router-dom'
+
 import {  CartContextProvider } from './componentes/Context/CartContext'
 import CartContainer from './containers/CartContainer/CartContainer'
 //import ItemCount from './componentes/ItemCount/ItemCount'
@@ -24,13 +24,9 @@ import CartContainer from './containers/CartContainer/CartContainer'
 
 
 function App() {
-
-
-
 return (
 <CartContextProvider>
   <BrowserRouter>
-
     <SuperNav />
     <NavBar>
       {/*

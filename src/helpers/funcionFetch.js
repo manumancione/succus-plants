@@ -255,6 +255,7 @@ export const funcionFetch = (id) => {
     return new Promise((res, ref) => {
         setTimeout(() => {
             res(id ? productos.find(prod=> prod.id===id) : productos )
-        }, 1000)
+        }, 2000)
+        // si rechazado( '404' )
     })
 }

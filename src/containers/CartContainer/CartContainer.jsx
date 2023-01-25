@@ -6,7 +6,7 @@ import './CartContainer.css'
 
 const CartContainer = () => {
 
-const {cartList, vaciarCarrito} = useCartContext()
+const {cartList, vaciarCarrito, eliminarItem, precioTotal, cantidadTotal} = useCartContext()
 console.log("cartList :" + cartList)
 
     const [count, setCount] = useState(1)
@@ -29,12 +29,7 @@ console.log("cartList :" + cartList)
 
     }
 
-      //precio total
-    const { precioTotal } = useCartContext()
-      
     
-     //eliminar por item
-    const { eliminarItem } = useCartContext()
 
 return (
     <>
@@ -64,7 +59,7 @@ return (
                             </div>
                             {/* <h5 className='item' >Cantidad: {product.cantidadItemSeleccionados}</h5> */}
                             <div className='item item--precio'>
-                                {/* <button className='icon-eliminar' onClick={eliminarItem(product.id)}><i className="bi bi-x-lg"></i></button>  */}
+                                {/* <button className='icon-eliminar' onClick={()=>{eliminarItem(product.id)}}><i className="bi bi-x-lg"></i></button>  */}
                                 <h5>$ {product.price}</h5>
                             </div>    
                         </div>
@@ -80,7 +75,8 @@ return (
             </div>
 
             <div>
-                <h5>Precio total: { precioTotal()}</h5>
+                {precioTotal() > 0 &&
+                    <h5 className='precio-total'>Precio total: {precioTotal()}</h5>}
             </div>
             
             <div className='div-button'>

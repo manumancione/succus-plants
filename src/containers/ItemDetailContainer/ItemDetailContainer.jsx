@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../../componentes/ItemDetail/ItemDetail'
 import Loading from '../../componentes/Loading/Loading'
-import { funcionFetch } from '../../helpers/funcionFetch'
+
 import  './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
-  const [producto, setProducto] = useState([])  // ------> en detailcontainer (firebase)
-  const [loading, setLoading] = useState('true')
-    const {productId} = useParams()
+  // const [producto, setProducto] = useState([])  // ------> en detailcontainer (firebase)
+  const [loading, setLoading] = useState(true)
+    const {productoId} = useParams()
     
     
   // useEffect(() => {
@@ -23,17 +23,18 @@ const ItemDetailContainer = () => {
   //trae un solo pto: ITEMDETAILCONTAINER
   useEffect(() => {
     const baseDatos = getFirestore()
-    const queryDoc = doc(baseDatos, 'productos', '7nZz0KFuQc1oASJ4RBXK')
+    const queryDoc = doc(baseDatos, 'productos', 'productoId')
     getDoc(queryDoc)
-      .then(response => setProducto({id:response.id, ...response.data()}))
+      .then(response => setProduct({id:response.id, ...response.data()}))
       .catch(error => console.log(error))
-      .finally(setLoading(false))
+      .finally(()=>setLoading(false))
   },[])
-  console.log(producto)
+  console.log(productoId)
 
   return (
     <div className='div'>
-      {loading ? <Loading /> :
+      {loading ? <Loading />
+        :
         <ItemDetail
           product={product}
         />}

@@ -151,3 +151,8 @@ border: none;
     color: rgba(153, 29, 29, 0.9);
     transition: .3s ease-in-out;
 }
+
+
+.precio-total{
+    padding: 1rem 2rem;
+}

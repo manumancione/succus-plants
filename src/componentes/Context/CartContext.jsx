@@ -8,17 +8,34 @@ export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
     const agregarCarrito = (producto) => {
-        setCartList([
-            ...cartList,
-            producto])
-        //setear el localStorage
+
+        // isInCart
+        const idx = cartList.findIndex(product => product.id === producto.id)
+
+        if (idx === -1) {
+            setCartList([
+                ...cartList,
+                producto
+            ])
+        } else {
+            cartList[idx].cantidadItemSeleccionados += producto.cantidadItemSeleccionados
+
+            setCartList([...cartList])
+
+        }
+
+        // setear en localstorage
     }
+
+
+     
+     
     
     //vaciar carrito
     const vaciarCarrito = () => setCartList([])
 
-    //calcular precio total
-    const precioTotal = () => cartList.reduce((count, product) => count += (product.cantidadItemSeleccionados * product.price), 0)
+    //precio total
+    const precioTotal = () => cartList.reduce((count, product) => count += (product.cantidadItemSeleccionados*product.price), 0)
 
 
     //cantidad total   
@@ -27,7 +44,7 @@ export const CartContextProvider = ({children}) => {
     //eliminar por item
     const eliminarItem = (id) => setCartList(cartList.filter(product => product.id !== id))
     
-    //estados y fx globales
+  
     return (
         <CartContext.Provider value={{
             cartList,

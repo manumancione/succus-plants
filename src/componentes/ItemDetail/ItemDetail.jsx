@@ -6,6 +6,7 @@ import { useContext, useState } from 'react'
 import { useCartContext } from '../Context/CartContext'
 
 const ItemDetail = ({ product }) => {
+    const [ isCount, setIsCount ] = useState(true)
   //console.log(product)
   const {agregarCarrito, cartList }= useCartContext()
 

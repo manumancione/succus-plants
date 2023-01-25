@@ -12,8 +12,8 @@ import {collection, doc, getDoc, getDocs, getFirestore, limit, limitToLast, orde
 const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([])
-  const [producto, setProducto] = useState([])  // ------> en detailcontainer (firebase)
-  const [loading, setLoading] = useState('true')
+  const [producto, setProducto] = useState({})  // ------> en detailcontainer (firebase)
+  const [loading, setLoading] = useState(true)
   const { productCategory } = useParams()
   
 
@@ -52,9 +52,9 @@ const ItemListContainer = () => {
     const baseDatos = getFirestore()
     const queryCollection = collection(baseDatos, 'productos')
     getDocs(queryCollection)
-      .then(response => setProductos(response.docs.map(product => ({ id: product.id, ...product.data()}))))
+      .then(response => setProductos(response.docs.map(product => ({ id: product.id, ...product.data() }) ) ))
       .catch(error => console.log(error))
-    .finally(setLoading(false))
+    .finally(()=>setLoading(false))
   }, [])
   console.log(producto)
 
