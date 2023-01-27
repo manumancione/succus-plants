@@ -32,7 +32,7 @@ return (
         <div className='nav-container__item'>
             <ul className='nav-list'>
                 <li>
-                    <Link to='categoria/suculentas'>SUCULENTAS</Link>
+                    <Link to='/categoria/suculentas'>SUCULENTAS</Link>
                 </li>
                 <li>
                     <Link to='/categoria/plantas'>PLANTAS</Link>

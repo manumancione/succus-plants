@@ -47,33 +47,49 @@ const ItemListContainer = () => {
 //corregir: acomodar!!
   
   
-  //trae una colleccion de ptos!
-  useEffect(() => {
-    const baseDatos = getFirestore()
-    const queryCollection = collection(baseDatos, 'productos')
-    getDocs(queryCollection)
-      .then(response => setProductos(response.docs.map(product => ({ id: product.id, ...product.data() }) ) ))
-      .catch(error => console.log(error))
-    .finally(()=>setLoading(false))
-  }, [])
-  console.log(producto)
-
+ 
 
   //trae filtrados por categoria
   useEffect(() => {
+
     const baseDatos = getFirestore()
     const queryCollection = collection(baseDatos, 'productos')
-    const queryFiltrada = query(queryCollection,
-      where('category', '==', 'suculentas')) //productCategory
-     // limit(2)
+    if (productCategory) {
+      
+      const queryFiltrada = query(queryCollection,
+        where('category', '==', productCategory)) //productCategory: no funciona, se rompe todo
+      // limit(2)
       //orderBy('price', 'desc'))
-    getDocs(queryFiltrada)
+      getDocs(queryFiltrada)
+        .then(response => setProductos(response.docs.map(product => ({ id: product.id, ...product.data() }))))
+        .catch(error => console.log(error))
+        .finally(setLoading(false))
+    } else {
+      const baseDatos = getFirestore()
+      const queryCollection = collection(baseDatos, 'productos')
+      getDocs(queryCollection)
+        .then(response => setProductos(response.docs.map(product => ({ id: product.id, ...product.data() }))))
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
+
+    }
+  }, [productCategory])
+
+
+
+
+  //trae una colleccion de ptos!
+  useEffect(() => {
+
+    const baseDatos = getFirestore()
+    const queryCollection = collection(baseDatos, 'productos')
+
+    getDocs(queryCollection)
       .then(response => setProductos(response.docs.map(product => ({ id: product.id, ...product.data() }))))
       .catch(error => console.log(error))
-      .finally(setLoading(false))
+      .finally(() => setLoading(false))
   }, [])
   console.log(producto)
-
 
 return (
 
