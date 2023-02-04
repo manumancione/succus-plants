@@ -50,6 +50,7 @@ h5{
 }
 .cart {
     width: 50%;
+    min-width: 500px;
   border: 1px solid rgba(0, 0, 0, 0.3);
     background-color: #fff;
     

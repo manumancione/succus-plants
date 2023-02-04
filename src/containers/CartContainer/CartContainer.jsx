@@ -81,7 +81,7 @@ console.log("cartList :" + cartList)
                 
                     <div>
                         {precioTotal() > 0 &&
-                            <h5 className='precio-total'>Precio total: {precioTotal()}</h5>}
+                            <h5 className='precio-total'>Precio total: $ {precioTotal()}</h5>}
                     </div>
             
                     <div className='div-button'>

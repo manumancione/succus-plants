@@ -11,17 +11,16 @@ const ItemDetail = ({ product }) => {
   const {agregarCarrito, cartList }= useCartContext()
 
   const onAdd = (cantidadItemSeleccionados) => {
-    console.log(cantidadItemSeleccionados)
-    agregarCarrito({...product, cantidadItemSeleccionados})
+    console.log('cantidad item seleccionado:' + cantidadItemSeleccionados)
+    agregarCarrito({ ...product, cantidadItemSeleccionados })
+    setIsCount(false)
   }
   
-  console.log(cartList)
+
 
 
 
   const [count, setCount] = useState(1)
-
-
   const sumaCount = () => {
     if (count < stock) {
       setCount(count + 1)

@@ -44,7 +44,7 @@ const ItemListContainer = () => {
 //   console.log(producto)
 
 
-//corregir: acomodar!!
+
   
   
  
@@ -54,6 +54,8 @@ const ItemListContainer = () => {
 
     const baseDatos = getFirestore()
     const queryCollection = collection(baseDatos, 'productos')
+
+    
     if (productCategory) {
       
       const queryFiltrada = query(queryCollection,
